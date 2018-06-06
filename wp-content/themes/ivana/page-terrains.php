@@ -1,9 +1,6 @@
 <?php 
-
 /*
-
 Template name: Terrains*/
-
 get_header();?>
 
     <?php while(have_posts()) : the_post(); ?>
@@ -14,124 +11,39 @@ get_header();?>
                 
                 <div class="col-md-8">
                     <h1>Tous nos terrains en ventes</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel.</p>
-                    <?php the_content();?>
+                    <p><?php the_content();?></p>
+                    
 
                     <!-- Terrain liste à boucler -->
                     <div class="row">
+                        <?php 
+
+                			$args=array('post_type'=>'terrains','posts_per_page'=>-1,'order'=>'ASC');
+                			$loop=new WP_Query ($args);
+                			while($loop->have_posts()):$loop->the_post();
+                        ?>
                         <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
+                            <div href="<?php the_permalink(); ?>" class="itemTerrain">
                                 <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
+                                    <img src="<?php the_field("image_01");?>" alt="">
+                                    <img src="<?php the_field("image_02");?>" alt="">
+                                    <img src="<?php the_field("image_03");?>" alt="">
                                 </div>
                                 
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
+                                <a href="<?php the_permalink();?>" class="infosTerrain clearfix">
+                                    <span class="nom"><?php the_title();?></span>
+                                    <span class="surface"><?php the_field("surface");?></span>
+                                </a>
 
                                 <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
+                                    <p><?php echo substr(get_the_excerpt(), 0,100); ?> </p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
-                                <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                </div>
-                                
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
-
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
-                                <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                </div>
-                                
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
-
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
-                                <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                </div>
-                                
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
-
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
-                                <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                </div>
-                                
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
-
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="itemTerrain">
-                                <div class="terrainSlider">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/terrain_thumb.jpg" alt="">
-                                </div>
-                                
-                                <div class="infosTerrain clearfix">
-                                    <span class="nom">By pass</span>
-                                    <span class="surface">600 m²</span>
-                                </div>
-
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia convallis justo, eget ornare nibh ornare vel. </p>
-                                </div>
-                            </div>
-                        </div>
+                         <?php
+                    		endwhile;
+                    		wp_reset_query();
+                        ?>
                     </div>
                 </div>
 
