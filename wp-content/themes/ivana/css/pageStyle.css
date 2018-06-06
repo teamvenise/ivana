@@ -1,0 +1,266 @@
+#page-interne {
+    padding: 97px 0 0;
+}
+
+#page-interne h1{
+    color: #ca3b1d;
+    font-size: 22px;
+    font-family: 'GB';
+}
+
+/* each terrain */
+
+/*** general style for picture slider ***/
+.slick-arrow {
+    background: url(../images/slick_arrows.png)no-repeat #c93a1c;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: absolute;
+    top:50%;
+    margin-top: -12px;
+    font-size: 0;
+    border: none;
+    outline: none;
+    z-index: 50;
+}
+
+.slick-next {
+    right: 15px;
+    background-position: -24px;
+}
+
+.slick-prev {
+    left: 15px;
+    background-position: 0;
+}
+
+.slick-dots {
+    display: block;
+    padding: 0;
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.slick-dots li {
+    list-style: none;
+    display: inline-block;
+    font-size: 0;
+}
+
+.slick-dots li button {
+    width: 6px;
+    height: 6px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    padding: 0;
+    margin: 0 2px;
+}
+
+.itemTerrain:hover {
+    cursor:pointer;
+}
+
+.itemTerrain .slick-arrow,
+.itemTerrain .slick-dots {
+    opacity: 0;
+    transition: all ease-in-out 300ms;
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    -ms-transition: all ease-in-out 300ms;
+}
+
+.itemTerrain:hover .slick-arrow,
+.itemTerrain:hover .slick-dots {
+    opacity: 1;
+}
+.slick-dots li.slick-active button{
+    background-color: #c93a1c;
+}
+
+.itemTerrain {
+    margin-bottom: 25px;
+}
+
+.infosTerrain {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+    padding: 12px 5px 7px;
+    color: #3a3a3a;
+    font-family: 'GB';
+}
+
+.itemTerrain .terrainSlider {
+    overflow: hidden;
+    max-height: 227px;
+    position: relative;
+}
+
+.itemTerrain .terrainSlider img {
+    width: 100%;
+    display: block;
+}
+
+.infosTerrain > .nom {
+    flex:1;
+}
+
+.itemTerrain .description {
+    text-align: justify;
+    font-size: 12px;
+    font-family: 'GL';
+    padding: 5px 5px 0px;
+}
+
+#dynamicMap {
+    background-color: #ebe9e4;
+    min-height: 100vh;
+}
+
+/*** terrain detail ***/
+
+.sidebar-right#page-interne {
+    padding: 27px 0 0;
+}
+#descriptionTable td strong {
+    color:#494949;
+}
+
+#descriptionTable td:not(strong){
+    color:#555;
+}
+
+#terrain-single-slider {
+    height: 400px;
+    overflow: hidden;
+}
+#terrain-single-slider .slick-arrow {
+    width: 51px;
+    height: 51px;
+    margin-top: -25px;
+}
+
+#terrain-single-slider .slick-prev {
+    background: url(../images/banner_bton_left.svg) no-repeat center;
+    left: 80px;
+}
+
+#terrain-single-slider .slick-next {
+    background: url(../images/banner_bton_right.svg) no-repeat center;
+    right: 80px;
+}
+
+#terrain-single-slider .slick-dots {
+    bottom: 30px;
+}
+
+#terrain-single-slider .slick-dots li button {
+    width: 11px;
+    height: 11px;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+#terrain-single-slider .slick-dots li.slick-active button {
+    background-color: white;
+}
+
+#descriptionTable {
+    margin-top: 40px;
+}
+
+/* WIDGETS */
+.contact-widget .head-title {
+    display: block;
+    background: #c93a1c;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 21px 30px;
+    margin-bottom: 6px;
+}
+
+#widgetForm {
+    border: 1px solid #dfdfdf;
+    padding: 30px;
+    text-align: center;
+}
+
+#widgetForm input[type="text"] {
+    width: 100%;
+    display: block;
+    border: 1px solid #dfdfdf;
+    margin-bottom: 30px;
+    padding: 10px 12px;
+}
+
+#widgetForm .btn {
+    font-size: 20px;
+}
+
+.relativePosts-widget {
+    margin-top: 23px;
+    padding-bottom: 8px;
+}
+
+.relativePosts-widget .title {
+    display: block;
+    border-bottom: 1px solid #c93a1c;
+    color: #c93a1c;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'GB';
+
+}
+
+#similarSlide .wrap {
+    padding: 25px;
+}
+
+#similarSlide .wrap .item {
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+}
+
+#similarSlide .wrap .item img {
+    display:block;
+    width:100%;
+}
+
+#similarSlide .infosTerrain {
+    border: none;
+    background-color: #c93a1c;
+    color: white;
+    padding: 10px 15px;
+}
+
+#similarSlide .slick-arrow {
+    width: 19px;
+    height: 19px;
+    border: 1px solid #c93a1c;    
+    background: url(../images/red_slide_arrows.png) no-repeat;
+}
+
+#similarSlide .slick-prev {
+    left: 0;
+    background-position: -1px;
+}
+
+#similarSlide .slick-next {
+    right: 0;
+    background-position: -20px;;
+}
