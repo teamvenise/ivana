@@ -519,4 +519,12 @@ $(document).ready(function(){
         $("#valuPlan").val($plan);
 
      });
+
+     $(window).scroll(function(event) {    
+        event.preventDefault();
+        var scroll = $(window).scrollTop();
+        if (scroll > 150) {
+            $("#map-canvas").addClass('fixedMap');
+        }
+    });
 });

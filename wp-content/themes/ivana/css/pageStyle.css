@@ -1,5 +1,5 @@
 #page-interne {
-    padding: 97px 0 0;
+    padding: 97px 0 40px;
 }
 
 #page-interne h1{
@@ -103,6 +103,10 @@
     font-family: 'GB';
 }
 
+.infosTerrain:hover {
+    color:#c93a1c;
+}
+
 .itemTerrain .terrainSlider {
     overflow: hidden;
     max-height: 227px;
@@ -125,10 +129,79 @@
     padding: 5px 5px 0px;
 }
 
-#dynamicMap {
+#map-canvas {
     background-color: #ebe9e4;
-    min-height: 100vh;
+    min-height: 600px;
+    position: relative;
 }
+
+#map-canvas iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* #map-canvas.fixedMap {
+    position: fixed;
+    top: 0;
+    float:none;
+} */
+
+.wp-pagenavi {
+    line-height: 31px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.wp-pagenavi .navigation {
+    width: 21px;
+    height: 21px;
+    border: 1px solid #c93a1c;
+    background: url(../images/red_slide_arrows.png) no-repeat;
+    font-size:0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;        
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: .5;
+}
+.wp-pagenavi .navigation:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.wp-pagenavi a {
+    color: #3a3a3a;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+
+.wp-pagenavi .current {
+    background-color: #c93a1c;
+    width: 31px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    height: 31px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-family: 'GB';
+    margin: 0 12px;
+}
+
+.wp-pagenavi .nextpostslink {
+    background-position: -19px;
+}
+
 
 /*** terrain detail ***/
 
@@ -182,6 +255,65 @@
     margin-top: 40px;
 }
 
+.prixTerrain .status{
+    display: inline-block;
+    width: 10px;
+    height: 11px;
+    background: url(../images/money_status.png) no-repeat;
+}
+.prixTerrain .status.up {
+    background-position: top left;
+}
+
+.prixTerrain .status.down {
+    background-position: bottom left;
+}
+
+.prixTerrain  .infos {
+    float: right;
+}
+
+.prixTerrain .infos .help .infobulle {
+    opacity: 0;
+    display: none;
+    background: white;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: -62px;
+    color: grey;
+    min-width: 130px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.45);
+    text-align: left;
+    font-size: 14px;
+}
+
+.prixTerrain  .infos .help {
+    font-style: inherit;
+    background: #d5d5d5;
+    width: 15px;
+    border-radius: 50%;
+    height: 15px;
+    display: inline-block;
+    line-height: 15px;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    position: relative;
+    top: -1px;
+    margin-left: 5px;
+}
+
+.prixTerrain  .infos .help:hover {
+    cursor:pointer;
+    background-color: #e0e0e0;
+}
+
+.prixTerrain  .infos .help:hover > div {
+    display: block;
+    opacity: 1;
+}
+
 /* WIDGETS */
 .contact-widget .head-title {
     display: block;
@@ -199,7 +331,8 @@
     text-align: center;
 }
 
-#widgetForm input[type="text"] {
+#widgetForm input[type="text"],
+#widgetForm input[type="email"] {
     width: 100%;
     display: block;
     border: 1px solid #dfdfdf;
@@ -263,4 +396,28 @@
 #similarSlide .slick-next {
     right: 0;
     background-position: -20px;;
+}
+
+/**** DYNAMIC MAP STYLE ****/
+#map-canvas .itemTerrain {
+    position: absolute;
+    left: 40px;
+    max-width: 200px;
+    z-index: 100;
+    background: white;
+    top: 25%;
+    margin: 0;
+}
+
+#map-canvas .itemTerrain .infosTerrain {
+    padding: 5px 10px;
+}
+
+#map-canvas .itemTerrain .infosTerrain > span {
+    font-size: 12px;
+}
+
+#map-canvas .itemTerrain .description {
+    padding: 10px;
+    font-size: 12px;
 }

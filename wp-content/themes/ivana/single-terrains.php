@@ -23,7 +23,18 @@ get_header();?>
                     </tr>
                     <tr>
                         <td><strong>Prix du m²</strong></td>
-                        <td><?php the_field("prix_du_m");?></td>
+                        <td class="prixTerrain">
+                            <?php the_field("prix_du_m");?>
+                            <div class="infos">
+                                <i class="status up"></i>
+                                <i class="help">
+                                    ?
+                                    <div class="infobulle">
+                                        Lorem ipsum dolor sit amet
+                                    </div>
+                                </i>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Distance</strong></td>
@@ -63,11 +74,9 @@ get_header();?>
                     <span class="head-title">
                         Laissez-nous vos coordonnées et restons en contact
                     </span>
-                    <form id="widgetForm" method="post">
-                        <input type="text" placeholder="Nom">
-                        <input type="text" placeholder="E-mail">
-                        <button type="submit" value="Envoyer" class="btn btnType">Envoyer</button>
-                    </form>
+                    <div id="widgetForm">
+                        <?php echo do_shortcode('[mc4wp_form id="224"]');?>
+                    </div>
                 </div>
 
                 <div class="relativePosts-widget">
