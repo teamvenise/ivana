@@ -38,11 +38,7 @@ get_header();?>
         </div>
     </section>
     <section class="fullSection bloc-rdv centered">
-        <div class="wrapper">
-            <h2>Et si on en parlait autour d’un cafe?</h2>
-            <a href="javascript:void(0)">Se voir  à PARIS</a>
-            <a href="javascript:void(0)"n>Se voir à Tana</a>
-        </div>
+        <?php get_sidebar("modal-reservation");?>
     </section>
         
 <?php get_footer();?>
