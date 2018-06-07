@@ -421,3 +421,132 @@
     padding: 10px;
     font-size: 12px;
 }
+
+/******* FULL PAGE LAYOUT ********/
+#fullWidth-page {
+    width: 100%;
+}
+
+#fullWidth-page .centered {
+    text-align: center;
+}
+
+#fullWidth-page .fullSection.grey {
+    background-color: #fafafa;
+    padding:85px 40px 40px;
+}
+
+#fullWidth-page .wrapper {
+    max-width: 750px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+#fullWidth-page .head-page {
+    margin-bottom: 35px;
+}
+
+#fullWidth-page .head-page > h1 {
+    font-size: 40px;
+    font-family: 'GR';
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    color: black;
+}
+#fullWidth-page .head-page > img {
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.25);
+}  
+#fullWidth-page .head-page > img:first-of-type {
+    float:left;
+}
+
+#fullWidth-page .head-page > img:last-of-type {
+    float:right;
+    margin-top: 60px;
+}
+
+#fullWidth-page h2 {
+    font-size:27px;
+    font-family: 'GL';
+    color: #c93a1c;
+    text-transform: inherit;
+    background: none;
+    padding-bottom: 25px;
+    display: block
+}
+
+
+#fullWidth-page h3{
+    font-size: 16px;
+    color: #c93a1c;
+    font-family: 'GR';
+    border-bottom: 2px solid #c93a1c;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#fullWidth-page p {
+    font-size: 14px;
+    font-family: 'GL';
+    margin: 0 auto 25px;
+    max-width: 610px;
+}
+
+.the_founder::before {
+    content:"";
+    width:40px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #464646;
+    margin-bottom: 19px;
+}
+
+.the_founder span,
+.the_founder strong {
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+
+.the_founder span {
+    color: #c93a1c;   
+}
+
+.the_founder strong {
+    font-family: 'GB';
+}
+
+.bloc-rdv {
+    padding: 35px 0 40px;
+}
+
+.bloc-rdv h2 {
+    font-family: 'GB' !important;
+    font-size: 25px !important;
+    text-transform: uppercase !important;
+}
+
+.bloc-rdv a {
+    background: #c93a1c;
+    color: #fff;
+    text-align: center;
+    height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    position: relative;
+    border: 2px solid #c93a1c;
+    transition: all 0.5s ease 0s;
+    font-size: 23px;
+    line-height: 80px;
+    min-width: 257px;
+    margin: 0 12px;
+}
+
+.bloc-rdv a:hover {
+    background-color: white;
+    color:#c93a1c;
+}
