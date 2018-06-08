@@ -167,7 +167,7 @@ $terrains = CTerrain::getBy();
 				_html += '<span class="surface">' + pdv.surface +'</span>';
 			_html += '</div>';
 			_html += '<div class="description">';
-				_html += '<p>' + pdv.content +'</p>';
+				_html += '<p>' + pdv.extrait +'</p>';
 			_html += '</div>';
 		_html += '</a>';
             	return _html;
@@ -255,7 +255,7 @@ $terrains = CTerrain::getBy();
                 <p><?php the_content();?></p>
 
 
-                <!-- Terrain liste Ã  boucler -->
+                <!-- Terrain liste à boucler -->
                 <div class="row">
                     <?php foreach ($terrains as $terrain):
                         $gallery = CTerrain::getTerrainGallery($terrain->id);  ?>
