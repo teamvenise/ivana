@@ -451,7 +451,7 @@
     font-size: 40px;
     font-family: 'GR';
     position: absolute;
-    right: 30px;
+    right: 38px;
     top: 40px;
     color: black;
 }
@@ -568,5 +568,6 @@
     max-width: 750px;
     margin: 20px auto 0;
     position: relative;
+    padding: 0 15px;
 }
 .fullSection.bloc-rdv .getDateParis,.fullSection.bloc-rdv .getDateTana { margin-top: 0;}

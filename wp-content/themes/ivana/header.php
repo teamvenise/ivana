@@ -14,17 +14,19 @@
 
         <link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/images/favicon.ico"/>
 
-        <link href="<?php bloginfo( 'template_url' ); ?>/style.css" rel="stylesheet"/>
+    <link href="<?php bloginfo( 'template_url' ); ?>/style.css" rel="stylesheet"/>
+    
+    <link href="<?php bloginfo( 'template_url' ); ?>/css/pageStyle.css" rel="stylesheet"/>
+
+    <link href="<?php bloginfo( 'template_url' ); ?>/css/mobile.css" rel="stylesheet"/>
+
+    <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/star-rating.css" rel="stylesheet"/>
 
-        <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
-
-        <link href="<?php bloginfo( 'template_url' ); ?>/css/mobile.css" rel="stylesheet"/>
-
-        <link href="<?php bloginfo( 'template_url' ); ?>/css/pageStyle.css" rel="stylesheet"/>
+    <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/slick.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/slick.css" rel="stylesheet"/>
        
