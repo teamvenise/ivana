@@ -369,39 +369,47 @@ function get_coordonnees() {
 
 
 
-function get_currency($from_Currency, $to_Currency, $amount) {
-$exchange_url = 'http://apilayer.net/api/live';
-$params = array(
-    'access_key' => '42235aa41c4776f7a917646bd1d0f847',
-    'source' => 'EUR',
-    'currencies' => 'MGA',
-    'format' => 1 // 1 = JSON
-);
+function get_currency() {
+// set API Endpoint and access key (and any options of your choice)
+$endpoint = 'latest';
+$access_key = 'ec32c6bd53d032b0164a7137080c6b59';
+$current_date = date('Y-m-d');
+// Initialize CURL:
+$ch = curl_init('http://apilayer.net/api/'.$endpoint.'?access_key='.$access_key.'&format=1?date='.$current_date);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// make cURL request // parse JSON
-$curl = curl_init();
-curl_setopt_array($curl, array(
-    CURLOPT_URL => $exchange_url . '?' . http_build_query($params),
-    CURLOPT_RETURNTRANSFER => true
-));
-$response = json_decode(curl_exec($curl));
-curl_close($curl);
+// Store the data:
+$json = curl_exec($ch);
+curl_close($ch);
 
-if (!empty($response->quotes)) {
-    // convert 150 USD to JPY ( Japanese Yen )
-   return $response->quotes ;
-}
-return $response;
+// Decode JSON response:
+$exchangeRates = json_decode($json, true);
+
+
+// Access the exchange rate values, e.g. MGA:
+return $exchangeRates['rates']['MGA'];
 }
 
 
+function get_last_currency() {
+// set API Endpoint and access key (and any options of your choice)
+$endpoint = 'latest';
+$access_key = 'ec32c6bd53d032b0164a7137080c6b59';
+$current_date = date('Y-m-d',strtotime("-1 days"));
+// Initialize CURL:
+$ch = curl_init('http://apilayer.net/api/'.$endpoint.'?access_key='.$access_key.'&format=1?date='.$current_date);
 
 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+// Store the data:
+$json = curl_exec($ch);
+curl_close($ch);
 
+// Decode JSON response:
+$exchangeRates = json_decode($json, true);
 
-function getTerrainPrice($priceeuro)
-{
-   $ariary = get_currency("EUR","MGA",$priceeuro);
- return $ariary;
+// Access the exchange rate values, e.g. GBP:
+return $exchangeRates['rates']['MGA'];
 }
+

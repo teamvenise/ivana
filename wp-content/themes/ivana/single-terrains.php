@@ -4,8 +4,26 @@ get_header();
 $pageid = get_the_id();
 $terrains = CTerrain::getBy();
 $gallery = CTerrain::getTerrainGallery($pageid);
-$defaut_ariary = DEFAULT_ARIARY;
-  var_dump(getTerrainPrice("25"));
+$current_terrain = CTerrain::getById($pageid);
+
+$yesterday_currency = get_last_currency();
+$today_currency = get_currency();
+
+if($yesterday_currency < $today_currency){
+    $arrow_class ="up";
+    $info_currency ="L'euro monte face à l'ariary sur le marché ...";
+}
+if($yesterday_currency > $today_currency){
+    $arrow_class ="down";
+    $info_currency ="L'euro en baisse face à l'ariary sur le marché ...";
+}
+if($yesterday_currency == $today_currency){
+    $arrow_class ="stable";
+    $info_currency ="L'euro stable face à l'ariary sur le marché ...";
+}
+
+$price_m = trim($current_terrain->prix_du_m) * $today_currency;
+
 ?>
 
 
@@ -32,15 +50,15 @@ $defaut_ariary = DEFAULT_ARIARY;
                         <td><?php the_field("surface");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Prix du mÂ²</strong></td>
+                        <td><strong>Prix du m²</strong></td>
                         <td class="prixTerrain">
-                            <?php the_field("prix_du_m");?>
+                            <strong><?php the_field("prix_du_m");?></strong>(<?php echo sprintf('%0.2f', $price_m);?>)
                             <div class="infos">
-                                <i class="status up"></i>
+                                <i class="status  <?php echo $arrow_class;?>"></i>
                                 <i class="help">
                                     ?
                                     <div class="infobulle">
-                                        Lorem ipsum dolor sit amet
+                                        <?php echo $info_currency;?>
                                     </div>
                                 </i>
                             </div>
@@ -51,7 +69,7 @@ $defaut_ariary = DEFAULT_ARIARY;
                         <td><?php the_field("distance");?></td>
                     </tr>
                     <tr>
-                        <td><strong>DurÃ©e</strong></td>
+                        <td><strong>Durée</strong></td>
                         <td><?php the_field("duree");?></td>
                     </tr>
                     <tr>
@@ -59,11 +77,11 @@ $defaut_ariary = DEFAULT_ARIARY;
                         <td><?php the_field("jirama");?></td>
                     </tr>
                     <tr>
-                        <td><strong>AccÃ¨s voiture</strong></td>
+                        <td><strong>Accès voiture</strong></td>
                         <td><?php the_field("acces_voiture");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Centre commercial Ã  proximitÃ©</strong></td>
+                        <td><strong>Centre commercial à proximité</strong></td>
                         <td><?php the_field("centre_commercial_a_proximite");?></td>
                     </tr>
                     <tr>
@@ -82,7 +100,7 @@ $defaut_ariary = DEFAULT_ARIARY;
             <div class="col-md-4">
                 <div class="contact-widget">
                     <span class="head-title">
-                        Laissez-nous vos coordonnÃ©es et restons en contact
+                        Laissez-nous vos coordonnées et restons en contact
                     </span>
                     <div id="widgetForm">
                         <?php echo do_shortcode('[mc4wp_form id="224"]');?>

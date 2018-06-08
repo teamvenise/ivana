@@ -55,7 +55,7 @@ class CTerrain {
             $element->longitude = get_field('longitude', intval($pid));
             $element->latitude = get_field('latitude', intval($pid));
             $element->gallery_images  =self::getTerrainGallery($pid) ;
-           
+            $element->extrait = substr($p->content, 0,100);
    	    //stocker dans le tableau statique
 	    self::$_elements[$pid] = $element;
     }
