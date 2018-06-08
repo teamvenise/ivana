@@ -1,13 +1,23 @@
 <?php
 /*Template name: Terrains detail*/
-get_header();?>
+get_header();
+$pageid = get_the_id();
+$terrains = CTerrain::getBy();
+$gallery = CTerrain::getTerrainGallery($pageid);
+$defaut_ariary = DEFAULT_ARIARY;
+  var_dump(getTerrainPrice("25"));
+?>
 
-<?php while(have_posts()) : the_post(); ?>
+
 <div id="terrain-single-slider">
-    <img src="<?php the_field("image_01");?>" alt="">
-    <img src="<?php the_field("image_02");?>" alt="">
-    <img src="<?php the_field("image_03");?>" alt="">
-    <img src="<?php the_field("image_04");?>" alt="">
+     <?php  if( count($gallery) ):?>
+        <?php  foreach($gallery as $image): ?>
+            <?php   $full_image_url= $image['full_image_url'];
+                    $title = $image['title'];   ?>
+                <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+        <?php endforeach; ?>
+     <?php endif; ?>
+  
 </div>
 <main class="main_single sidebar-right" id="page-interne">
     <div class="container">
@@ -85,32 +95,26 @@ get_header();?>
                     </span>
 
                     <div id="similarSlide">
-                        <?php 
-
-                			$args=array('post_type'=>'terrains','posts_per_page'=>-1,'order'=>'ASC');
-                			$loop=new WP_Query ($args);
-                			while($loop->have_posts()):$loop->the_post();
-                        ?>
+                         <?php foreach ($terrains as $terrain):
+                                $gallery = CTerrain::getTerrainGallery($terrain->id);  ?>
                         <div class="wrap">
-                            <a class="item">
-                                <img src="<?php the_field("image_01");?>" alt="">
+                            <a class="item" href="<?php echo get_permalink($terrain->id); ?>" >
+                              <?php  $image = $gallery[0];
+                                     $full_image_url= $image['thumbnail_image_url'];
+                                     $full_image_url = acf_photo_gallery_resize_image($full_image_url, 262, 160);
+                                     $title = $image['title'];   ?>
+                                <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
                                 <div class="infosTerrain clearfix">
-                                    <span class="nom"><?php the_title();?></span>
-                                    <span class="surface"><?php the_field("surface");?></span>
+                                    <span class="nom"><?php echo $terrain->title; ?></span>
+                                    <span class="surface"><?php echo $terrain->surface;?></span>
                                 </div>
                             </a>
                         </div>
-                         <?php
-                    		endwhile;
-                    		wp_reset_query();
-                        ?>
+                          <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<?php
-    endwhile;
-    wp_reset_query();
-?>
+
 <?php get_footer();?>

@@ -161,12 +161,17 @@ h1,h2,h3,h4,h5,h6{
 {
     background-position: -29px 0 !important;
 }
-.navMenu > ul > li:nth-child(3) > a:before,#mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(3) > a:before{
+.navMenu > ul > li:nth-child(3) > a:before,
+#mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(3) > a:before{
     background-position: -62px 0 !important;
 }
 .navMenu > ul > li:nth-child(4) > a:before,#mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(4) > a:before{
     background-position: -107px 0 !important;
 }
+.navMenu > ul > li:nth-child(4) > a:before,#mega-menu-primary.mega-menu > li.mega-current-menu-paren:nth-child(4) > a:before {
+    background-position: -107px -26px !important
+}
+
 .navMenu > ul > li:nth-child(2) > a:hover:before,.navMenu > ul > li.in:nth-child(2) > a:before,
 #mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(2) > a:hover:before,
 #mega-menu-primary.mega-menu > li.mega-menu-item.mega-current-menu-ancestor:nth-child(2) > a:before{
@@ -177,7 +182,7 @@ h1,h2,h3,h4,h5,h6{
     background-position: -62px 0;
 }
 .navMenu > ul > li:nth-child(3) > a:hover:before,#mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(3) > a:hover:before{
-    background-position: -62px -28px !important;
+    background-position:-62px -26px !important;
 }
 .navMenu > ul > li:nth-child(4) > a:hover:before,.navMenu > ul > li:nth-child(4).current-menu-item > a:before,
 #mega-menu-primary.mega-menu > li.mega-menu-item:nth-child(4) > a:hover:before,#mega-menu-primary.mega-menu > li.mega-menu-item.mega-current-menu-item:nth-child(4) > a:before{
@@ -208,14 +213,20 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     margin: 0 2px;
 }
-.navMenu > ul > li:nth-child(3){
-    margin-left: 335px;
+/**** Center logo spacing ****/
+#mega-menu-primary > li:nth-child(2){
+    margin-right: 150px !important;
 }
+
+#mega-menu-primary > li:nth-child(3){
+    margin-left: 150px !important;
+}
+/*****************************/
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{line-height: inherit !important;}
 #mega-menu-primary.mega-menu > li.mega-menu-item {
     width: 190px !important;
     text-align: center;
-    margin: 0 2px !important;
+    padding: 0 2px !important;
 }
 .mega-text_menu h4.mega-block-title{
     color: #c93a1c !important;
@@ -237,11 +248,11 @@ h1,h2,h3,h4,h5,h6{
     padding: 12px 12px 11px !important;
     transition:all 0.5s ease 0s;
 }
-#mega-menu-primary #mega-menu-item-37.mega-menu-item,#mega-menu-primary #mega-menu-item-220.mega-menu-item{
+/* #mega-menu-primary #mega-menu-item-37.mega-menu-item,#mega-menu-primary #mega-menu-item-220.mega-menu-item{
     margin-left: 335px !important;
-}
+} */
 header{
-    height: 85px;
+    height: 84px;
     border-bottom:2px solid #c93a1c;
 }
 .banner{
@@ -1456,7 +1467,7 @@ box-shadow: none;
 .blocrdvSingle .checkCountry { width: auto;}
 .blocrdvSingle .countryChoice > .cont span { min-width: 250px;}
 .blocrdvSingle .inline-block { margin: 0 8px;}
-.contentRdv .curDate { padding: 0 !important;}
+.contentRdv .curDate { padding: 0 !important; margin-bottom: 25px;}
 .comment .textTop h1 { color: #000 !important; font: 40px/42px GB !important;}
 .comment .textTop h2 { font: 18px/25px GB;}
 .comment .textTop h2 { width: 70%; margin: auto !important;}
@@ -1490,7 +1501,6 @@ box-shadow: none;
 
 .contentForm          { font-size: 0}
 .contentForm *          { box-sizing: border-box; outline: 0}
-.contentForm input     { }
 .contentForm input[type="email"],
 .contentForm input[type="text"],
 .contentForm input[type="tel"] { margin-bottom: 20px;display: block; width: 100%; border: none; height: 55px !important; padding: 10px 28px; font: 18px/24px Gbook; color: #bbbbbb}
@@ -1513,4 +1523,23 @@ box-shadow: none;
     .top .titre,
     .bodyComing .top p,
     .contentPageCome .top { text-align: center !important}
+}
+
+/** submenu style **/
+#mega-menu-item-232 .mega-sub-menu {
+    min-width: 270px;
+    margin: 2px 0 0 !important;
+    padding: 0;
+}
+
+#mega-menu-item-232 .mega-sub-menu li {
+    margin: 0 !important;
+    line-height: normal;
+    border-bottom: 1px solid #e0e0e0 !important;
+    padding: 5px 20px !important;
+}
+
+#mega-menu-item-232 .mega-sub-menu li > .mega-menu-link:hover {
+    background: transparent !important;
+    color: #c93a1c !important;
 }
