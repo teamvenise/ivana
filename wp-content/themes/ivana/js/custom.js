@@ -170,13 +170,13 @@ $(document).ready(function(){
 
         format: 'DD.MM.YYYY',
 
-        minDate: moment("16.03.2018", "DD.MM.YYYY"),
+        /*minDate: moment("16.03.2018", "DD.MM.YYYY"),
 
-        maxDate: moment("30.03.2018", "DD.MM.YYYY"),
+        maxDate: moment("30.03.2018", "DD.MM.YYYY"),*/
 
         useCurrent: true,
 
-        //minDate: new Date(),
+        minDate: new Date(),
 
         sideBySide: true
 
@@ -292,7 +292,7 @@ $(document).ready(function(){
 
         
 
-     $valSejourFinal= 0;
+     /*$valSejourFinal= 0;
 
      $valCuisineFinal = 0;
 
@@ -300,7 +300,7 @@ $(document).ready(function(){
 
      $valChambreFinal = 0 ;
 
-     /*$("#id_gammeSejour").click(function(){
+     $("#id_gammeSejour").click(function(){
 
         
 
@@ -354,7 +354,7 @@ $(document).ready(function(){
 
      
 
-     $("#id_gammeCuisine").click(function(){
+     $/*("#id_gammeCuisine").click(function(){
 
          if($(this).hasClass("gamme1")){
 
@@ -442,7 +442,7 @@ $(document).ready(function(){
 
          $( ".prixTotal" ).html( $valSFinal + " €");
 
-     });
+     });*/
 
      
 

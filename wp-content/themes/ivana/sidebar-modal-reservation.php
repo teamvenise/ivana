@@ -1,13 +1,4 @@
-<div class="container">
-
-
-                            <div class="content bloc_reservation text-center relative">
-
-                                <div class="title">TOUT COMMENCE PAR UN RENDEZ-VOUS !</div>
-
-                                <p>Planifions une rendez-vous pour que nous puissions mieux connaitre <br /> votre projet.</p>
-
-                                <div class="contentRdv ">
+<div class="contentRdv ">
 
                                     <div class="row checkCountry">
 
@@ -106,11 +97,6 @@
                                     <div class="back hide absolute"> << Retour</div>
 
                                 </div>
-
-                          </div>
-
-
-            </div>
 
 <div class="modal fade rdvModal" id="rdvTana" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 

@@ -16,7 +16,7 @@
 
             </h1><br />
 
-            <a href="<?php echo esc_url( get_permalink(38) ); ?>" class="btn btnType">Découvrir comment</a>
+            <a href="<?php echo esc_url( get_permalink(224) ); ?>" class="btn btnType">Découvrir comment</a>
 
         </div>
 
@@ -38,7 +38,7 @@
 
                     <h2>
 
-                        <span>Une formule clé en main </span>depuis l’étranger ! 
+                        <span>Une formule clé en main </span> depuis l’étranger ! 
 
                     </h2>
 
@@ -396,7 +396,7 @@
 
                         <p>Tout a commence en 1991 lorsque que ma mère a décidé de créer sa propre entreprise de BTP, alors qu’elle était enceinte de moi.Tout a commence en 1991 lorsque que ma mère a décidé de créer sa propre entreprise de BTP, alors qu’elle était enceinte de moi.</p>
 
-                        <a class="btn btnType" href="<?php echo esc_url( get_permalink(38) ); ?>">parlons-en </a>
+                        <a class="btn btnType" href="<?php echo esc_url( get_permalink(224) ); ?>">parlons-en </a>
 
                     </div>
 
@@ -513,112 +513,13 @@
                     </div>
                     <div class="col-md-6">
 
-                            <div class="content bloc_reservation text-center">
+                            <div class="content bloc_reservation text-center reservationHome">
 
                                 <div class="title text-center">
                                     <h2><span>Et maintenant ? <i>Parlons de votre <br /> projet en tête-à-tête</i></span></h2>
                                 </div>
-                                <div class="contentRdv relative">
-
-                                    <div class="checkCountry">
-
-                                        <div class="">
-
-                                            <div class="table countryChoice" id="checkParis">
-
-                                                <div class="cont">
-
-                                                    <span>Se voir  à PARIS</span> 
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="">
-
-                                            <div class="table countryChoice" id="checkTana">
-
-                                                <div class="cont">
-
-                                                    <span>Se voir  à Tana</span>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="getDateTana hide">
-
-                                        <div class="form-group">
-
-                                            <div class="row">
-
-                                                <div class="col-md-6">
-
-                                                    <div class="currentDate">
-
-                                                        <div class="curr_mounth"></div>
-
-                                                        <div class="curr_date"></div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                    <input id="datetimepickerTana" type="hidden"/>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                            
-
-                                    <div class="getDateParis hide">
-
-                                        <div class="form-group">
-
-                                            <div class="row">
-
-                                                <div class="col-md-6">
-
-                                                    <div class="currentDate">
-
-                                                        <div class="curr_mounth"></div>
-
-                                                        <div class="curr_date"></div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                    <input id="datetimepickerParis" type="hidden"/>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="back hide absolute"> << Retour</div>
-
-                                </div>
-
-                          </div>
+                                <?php get_sidebar("modal-reservation");?>
+                             </div>
 
                        
 

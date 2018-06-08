@@ -719,105 +719,7 @@
 
                                 <p>Planifions une rendez-vous pour que nous puissions mieux connaitre <br /> votre projet.</p>
 
-                                <div class="contentRdv ">
-
-                                    <div class="row checkCountry">
-
-                                        <div class="inline-block">
-
-                                            <div class="table countryChoice" id="checkParis">
-
-                                                <div class="cont">
-
-                                                    <span>Se voir  à Paris</span> 
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="inline-block">
-
-                                            <div class="table countryChoice" id="checkTana">
-
-                                                <div class="cont">
-
-                                                    <span>Se voir  à Tana</span>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="getDateTana hide">
-
-                                        <div class="form-group">
-
-                                            <div class="row">
-
-                                                <div class="col-md-6 curDate">
-
-                                                    <div class="currentDate ">
-
-                                                        <div class="curr_mounth"></div>
-
-                                                        <div class="curr_date"></div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                    <input id="datetimepickerTana" type="hidden"/>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                            
-
-                                    <div class="getDateParis hide">
-
-                                        <div class="form-group">
-
-                                            <div class="row">
-
-                                                <div class="col-md-6 curDate">
-
-                                                    <div class="currentDate">
-
-                                                        <div class="curr_mounth"></div>
-
-                                                        <div class="curr_date"></div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                    <input id="datetimepickerParis" type="hidden"/>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="back hide absolute"> << Retour</div>
-
-                                </div>
+                                <?php get_sidebar("modal-reservation");?>
 
                           </div>
 
@@ -836,6 +738,5 @@
 
 		?>
 
-        <?php get_sidebar("modal-reservation");?>
 
 <?php get_footer();?>

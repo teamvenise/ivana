@@ -467,7 +467,7 @@
     margin-top: 60px;
 }
 
-#fullWidth-page h2 {
+#fullWidth-page h2,.fullSection h2 {
     font-size:27px;
     font-family: 'GL';
     color: #c93a1c;
@@ -519,34 +519,54 @@
     font-family: 'GB';
 }
 
-.bloc-rdv {
+.fullSection.bloc-rdv {
     padding: 35px 0 40px;
 }
 
-.bloc-rdv h2 {
+.fullSection.bloc-rdv h2 {
     font-family: 'GB' !important;
     font-size: 25px !important;
     text-transform: uppercase !important;
 }
 
-.bloc-rdv a {
+.fullSection.bloc-rdv .checkCountry .countryChoice {
     background: #c93a1c;
     color: #fff;
     text-align: center;
     height: 80px;
     display: inline-block;
     vertical-align: middle;
-    border-radius: 5px;
+    border-radius: 11px;
     position: relative;
     border: 2px solid #c93a1c;
     transition: all 0.5s ease 0s;
     font-size: 23px;
     line-height: 80px;
     min-width: 257px;
-    margin: 0 12px;
+    margin: 0;
 }
 
-.bloc-rdv a:hover {
+.fullSection.bloc-rdv .checkCountry .countryChoice:hover {
     background-color: white;
     color:#c93a1c;
 }
+
+.fullSection.bloc-rdv .countryChoice > .cont {
+    display: block;
+    width: 100%;
+}
+
+.fullSection.bloc-rdv .checkCountry {
+    margin:0 auto;
+    width: 100%;
+}
+
+.fullSection.bloc-rdv .checkCountry .inline-block {
+    margin: 0 12px;
+}
+.fullSection.bloc-rdv .contentRdv { 
+    max-width: 750px;
+    margin: 20px auto 0;
+    position: relative;
+}
+.fullSection.bloc-rdv .getDateParis,.fullSection.bloc-rdv .getDateTana { margin-top: 0;}

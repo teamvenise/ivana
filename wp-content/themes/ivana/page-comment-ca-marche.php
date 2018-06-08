@@ -47,11 +47,12 @@ get_header();?>
             </div>
         </div>
     </div>
-    <section class="blocrdvSingle">
-
-            
+    <section class="fullSection bloc-rdv centered">
+        <div class="container text-center">
+            <h2>Et si on en parlait autour d’un cafe?</h2>
             <?php get_sidebar("modal-reservation");?>
-        </section>
+        </div>
+    </section>
 </main>
 
 <?php

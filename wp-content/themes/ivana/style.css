@@ -305,6 +305,9 @@ main section .title > span{
     border-bottom: 2px solid #c93a1c;
     margin-top: -29px;
 }
+main section .bloc_newsletter .title > span { 
+    margin-top: -17px;
+}
 .bloc_intro{
     background: #f6f5f5;
     padding:  40px 0;
@@ -918,9 +921,12 @@ footer a:hover{
      font-family: 'GB';
      margin-bottom: 75px !important;
 }
-.checkCountry {
+.reservationHome .checkCountry {
      width: 260px;
      margin:50px auto;
+}
+.reservationHome .inline-block { 
+   width: 100%; 
 }
 .countryChoice{
     background: #c93a1c;
@@ -1054,6 +1060,7 @@ footer a:hover{
     padding-left:60px;
     padding-right: 60px;
     display: inline-block;
+    padding-bottom: 0;
 }
 .rdvModal .modal-dialog .title{
     width:63%;
@@ -1304,7 +1311,7 @@ img[class*="wp-image-"].aligncenter{
 .getDateParis,.getDateTana{
     width: 400px;
     margin: auto;
-    margin-top: -45px;
+    /*margin-top: -45px;*/
     }
 .contentRdv .back {
     left: 40px;
@@ -1314,9 +1321,9 @@ img[class*="wp-image-"].aligncenter{
     font-size: 0;
     background: url(images/sprite.png) no-repeat -310px -22px;
 }
-.contentRdv { 
+/*.contentRdv { 
     margin-top: 60px;
-}
+}*/
 .detailsReservations { 
     padding-top: 20px;
 }
@@ -1467,8 +1474,8 @@ box-shadow: none;
 .blocTxt.reverse .texte{ left: 50%;}
 .blocTxt.reverse .photo { right: 50%;}
 
-.bloc_financement .contentRdv .back {left: -20px;top: -42px;}
-
+.bloc_financement .contentRdv .back {left: 40px;top: 20px;}
+.rdvModal p { margin-bottom: 0 !important;}
 /*********************************************/
 .bodyComing { min-height: 100vh;  background: url(images/bgattente.jpg) no-repeat; background-size: cover; padding: 20px 50px;}
 .contentPageCome { max-width: 982px; margin: auto;}
