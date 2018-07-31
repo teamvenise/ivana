@@ -393,10 +393,10 @@
                         <h2>notre concept</h2>
 
                         <hr />
-
-                        <p>Tout a commence en 1991 lorsque que ma mère a décidé de créer sa propre entreprise de BTP, alors qu’elle était enceinte de moi.Tout a commence en 1991 lorsque que ma mère a décidé de créer sa propre entreprise de BTP, alors qu’elle était enceinte de moi.</p>
-
-                        <a class="btn btnType" href="<?php echo esc_url( get_permalink(224) ); ?>">parlons-en </a>
+            
+                        <p>Nous avons la certitude qu’à partir du moment où vous vous êtes décidé à, investir à Madagascar, vous y installer un temps ou pour votre retraite, nous confier la
+construction de votre maison, c’est un pas de plus vers un renouveau de l’Ile !</p>
+                        <a class="btn btnType" href="<?php echo esc_url( get_permalink(229) ); ?>">parlons-en </a>
 
                     </div>
 
@@ -460,8 +460,16 @@
 
                                 <div class="absolute text-center">
 
-                                    <div class="maisonName"><?php the_title();?></div>
-                                    <div class="sousTitre"><?php the_field("slogan");?></div>
+                                    <div class="maisonName">
+                                        <?php the_title();?>
+                                        <div class="sousTitre"><?php the_field("slogan");?></div>
+                                    </div>
+                                    
+                                    <ul class="details">
+                                        <li><i class="icone chambres"></i>3 Chambres</li>
+                                        <li><i class="icone salle-de-bain"></i>2 salles de bains</li>
+                                        <li><i class="icone surface"></i>60 M²</li>
+                                    </ul>
 
                                     <!--div class="short_desc"><?php the_field("type");?> - <?php the_field("surface");?> m²</div-->
 
@@ -493,7 +501,7 @@
 
                         <div class="content contentRight">
                             <div class="title text-center">
-                                <h2><span>4 étapes et nous <i>commençons lestravaux.</i></span></h2>
+                                <h2><span>4 étapes et nous <i>commençons les travaux.</i></span></h2>
                             </div>
 
                             <ul class="text-center">
@@ -532,7 +540,7 @@
             </div>
             <div class="detailsReservations text-center">
                 <div class="title"><strong>On vous explique</strong>  les détails.</div>
-                <a class="btn btnType">ICI</a>
+                <a class="btn btnType" title="ici" href="<?php echo esc_url( get_permalink(224) ); ?>">ICI</a>
             </div>
         </section>
         <section class="bloc_instagramHome">
@@ -584,33 +592,37 @@
 		?>
 
             <section class="mapHome relative">
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120799.5785927135!2d47.44247405154489!3d-18.88766538820728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f07de34f1f4eb3%3A0xdf110608bcc082f9!2sTananarive!5e0!3m2!1sfr!2smg!4v1512022670549" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-            <div class="absolute">
-
-                <div class="contact_map">
-
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi massa.</p>
-
-                    <hr />
-
-                    <ul class="socialMap">
-
-                        <li><a href="mailto:salama@ivana.mg">salama@ivana.mg</a></li>
-
-                        <li><a href="https://www.facebook.com/Ivana.immobilier/" target="_blank">/ivana.immobilier</a></li>
-
-                        <li><a href="tel:+261 34 70 830 02">+261 34 70 830 02</a></li>
-
-                        <li><a href="https://www.instagram.com/ivana_home" target="_blank">@ivana_home</a></li>
-
-                    </ul>
-
-                </div>
-
+            <div class="contact_map">
+                <ul class="socialMap">
+                    <li><a href="mailto:salama@ivana.mg">salama@ivana.mg</a></li>
+                    <li><a href="https://www.facebook.com/Ivana.immobilier/" target="_blank">/ivana.immobilier</a></li>
+                    <li><a href="tel:+261 34 70 830 02">+261 34 70 830 02</a></li>
+                    <li><a href="https://www.instagram.com/ivana_home" target="_blank">@ivana_home</a></li>
+                </ul>
             </div>
-
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 adresse">
+                        <span class="icone tana"></span>
+                        <strong>ANTANANARIVO</strong>
+                        <p>Antananarivo 102, <br>Sabotsy Namehana</p>
+                        <hr />
+                    </div>
+                    <div class="col-md-3 map-tana">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/map-tana.jpg">
+                    </div>
+                    <div class="col-md-3 map-paris">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/map-paris.jpg">
+                    </div>
+                    <div class="col-md-3 adresse">
+                        <span class="icone paris"></span>
+                        <strong>PARIS</strong>
+                        <p>7 Rue Meyerbeer 75009, <br>Paris</p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
         </section>
 
 <?php get_footer();?>

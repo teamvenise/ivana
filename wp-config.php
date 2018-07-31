@@ -40,7 +40,7 @@
 
 /** Nom de la base de données de WordPress. */
 
-define('DB_NAME', 'ivana');
+define('DB_NAME', 'ivabdd');
 
 
 

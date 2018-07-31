@@ -4,6 +4,7 @@ get_header();
 $pageid = get_the_id();
 $terrains = CTerrain::getBy();
 $gallery = CTerrain::getTerrainGallery($pageid);
+
 $current_terrain = CTerrain::getById($pageid);
 
 $yesterday_currency = get_last_currency();
@@ -11,15 +12,15 @@ $today_currency = get_currency();
 
 if($yesterday_currency < $today_currency){
     $arrow_class ="up";
-    $info_currency ="L'euro monte face à l'ariary sur le marché ...";
+    $info_currency ="L'euro monte face Ã  l'ariary sur le marchÃ©.";
 }
 if($yesterday_currency > $today_currency){
     $arrow_class ="down";
-    $info_currency ="L'euro en baisse face à l'ariary sur le marché ...";
+    $info_currency ="L'euro en baisse face Ã  l'ariary sur le marchÃ©.";
 }
 if($yesterday_currency == $today_currency){
     $arrow_class ="stable";
-    $info_currency ="L'euro stable face à l'ariary sur le marché ...";
+    $info_currency ="L'euro stable face Ã  l'ariary sur le marchÃ©.";
 }
 
 $price_m = trim($current_terrain->prix_du_m) * $today_currency;
@@ -28,10 +29,10 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
 
 
 <div id="terrain-single-slider">
-     <?php  if( count($gallery) ):?>
+     <?php  if( count($gallery) ): ?>
         <?php  foreach($gallery as $image): ?>
             <?php   $full_image_url= $image['full_image_url'];
-                    $title = $image['title'];   ?>
+                    $title = $image['title'];  ?>
                 <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
         <?php endforeach; ?>
      <?php endif; ?>
@@ -42,7 +43,8 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
         <div class="row">
             <div class="col-md-8">
                 <h1><?php echo the_title();?></h1>
-                <p><?php echo the_content();?></p>
+
+                <p> Terrain Ã  vendre Ã  partir de <?php the_field("prix_du_m");?>â‚¬.</p>
                 <table class="table table-striped" id="descriptionTable">
                     <tbody>
                     <tr>
@@ -50,9 +52,9 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                         <td><?php the_field("surface");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Prix du m²</strong></td>
+                        <td><strong>Prix du â€Žm2 </strong></td>
                         <td class="prixTerrain">
-                            <strong><?php the_field("prix_du_m");?></strong>(<?php echo sprintf('%0.2f', $price_m);?>)
+                            <strong><?php the_field("prix_du_m");?> â‚¬</strong> (<?php echo number_format($price_m,2,',',' ');?> MGA)
                             <div class="infos">
                                 <i class="status  <?php echo $arrow_class;?>"></i>
                                 <i class="help">
@@ -69,7 +71,7 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                         <td><?php the_field("distance");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Durée</strong></td>
+                        <td><strong>DurÃ©e</strong></td>
                         <td><?php the_field("duree");?></td>
                     </tr>
                     <tr>
@@ -77,15 +79,15 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                         <td><?php the_field("jirama");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Accès voiture</strong></td>
+                        <td><strong>AccÃ¨s voiture</strong></td>
                         <td><?php the_field("acces_voiture");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Centre commercial à proximité</strong></td>
+                        <td><strong>Centre commercial Ã  proximitÃ©</strong></td>
                         <td><?php the_field("centre_commercial_a_proximite");?></td>
                     </tr>
                     <tr>
-                        <td><strong>Etablissement au allentour</strong></td>
+                        <td><strong>Etablissement au alentour</strong></td>
                         <td><?php the_field("etablissement_au_alentour");?></td>
                     </tr>
 
@@ -100,10 +102,10 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
             <div class="col-md-4">
                 <div class="contact-widget">
                     <span class="head-title">
-                        Laissez-nous vos coordonnées et restons en contact
+                        Laissez-nous vos coordonnÃ©es et restons en contact
                     </span>
                     <div id="widgetForm">
-                        <?php echo do_shortcode('[mc4wp_form id="224"]');?>
+                        <?php echo do_shortcode('[mc4wp_form id="266"]');?>
                     </div>
                 </div>
 
@@ -117,11 +119,13 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                                 $gallery = CTerrain::getTerrainGallery($terrain->id);  ?>
                         <div class="wrap">
                             <a class="item" href="<?php echo get_permalink($terrain->id); ?>" >
-                              <?php  $image = $gallery[0];
-                                     $full_image_url= $image['thumbnail_image_url'];
-                                     $full_image_url = acf_photo_gallery_resize_image($full_image_url, 262, 160);
-                                     $title = $image['title'];   ?>
-                                <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+                                 <?php  if( count($gallery) ): ?>
+                                    <?php   $image = $gallery[0] ?>
+                                        <?php   $full_image_url= $image['full_image_url'];
+                                                $title = $image['title'];  ?>
+                                            <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+                                   
+                                 <?php endif; ?>
                                 <div class="infosTerrain clearfix">
                                     <span class="nom"><?php echo $terrain->title; ?></span>
                                     <span class="surface"><?php echo $terrain->surface;?></span>

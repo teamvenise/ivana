@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="pull-right">
 
-                                        <a class="btn btnType" href="<?php the_field("plan");?>">Telecharger les plans</a>
+                                        <a class="btn btnType" href="<?php echo  get_permalink(get_page_by_path("inscription")->ID); ?>">Demander les plans</a>
     
                                     </div>
 
@@ -207,11 +207,7 @@
 
                     <div class="images_single"> 
 
-                        <img class="imgGamme01" src="<?php the_field("image_salle_de_sejour");?>" />
-
-                        <img class="imgGamme02 none" src="<?php the_field("image_salle_de_sejour_02");?>" />
-
-                        <img class="imgGamme03 none" src="<?php the_field("image_salle_de_sejour_03");?>" />
+                        <img class="imgGamme01" src="<?php the_field("image_salle_de_sejour");?>" alt="<?php the_field("titre_salle_de_sejour_01");?>" />
 
                     </div>
 
@@ -332,7 +328,7 @@
 
                     <div class="images_single"> 
 
-                         <img class="imgGamme01" src="<?php the_field("image_cuisine");?>" />
+                         <img class="imgGamme01" src="<?php the_field("image_cuisine");?>" alt="<?php the_field("titre_cuisine_01");?>" />
 
 
                     </div>
@@ -406,7 +402,8 @@
                                 </div>
 
                               </div>
-
+                              <?php $cuisine = get_field("titre_cuisine_03");?>
+                              <?php if ($cuisine) {?>
                               <div class="panel panel-default">
 
                                 <div class="panel-heading">
@@ -430,6 +427,7 @@
                                 </div>
 
                               </div>
+                              <?php } ?>
 
                             </div>
 
@@ -450,7 +448,7 @@
             <div class="container relative">
                 <div class="col-md-8 pull-right">
                     <div class="images_single"> 
-                        <img class="imgGamme01" src="<?php the_field("image_salle_de_bain");?>" />
+                        <img class="imgGamme01" src="<?php the_field("image_salle_de_bain");?>" alt="<?php the_field("titre_salle_de_bain_01");?>" />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -465,7 +463,7 @@
                         <div class="panel_group" id="salle-de-bain">
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#salle-de-bain" href="#salle-de-bain" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#salle-de-bain" href="#salle-de-bain1" >
                                       <?php the_field("titre_salle_de_bain_01");?>
                                     </a>
                                 </div>
@@ -508,7 +506,7 @@
             <div class="container relative">
                 <div class="col-md-8">
                     <div class="images_single">
-                       <img class="imgGamme01" src="<?php the_field("image_chambre");?>" />
+                       <img class="imgGamme01" src="<?php the_field("image_chambre");?>" alt="<?php the_field("titre_chambre_01");?>" />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -566,7 +564,7 @@
             <div class="container relative">
                 <div class="col-md-8 pull-right">
                     <div class="images_single"> 
-                        <img class="imgGamme01" src="<?php the_field("image_buanderie");?>" />
+                        <img class="imgGamme01" src="<?php the_field("image_buanderie");?>" alt="<?php the_field("titre_buanderie_01");?>" />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -578,43 +576,49 @@
                         <p>
                             <?php the_field("contenu_buanderie");?>
                         </p>
-                        <div class="panel_group" id="salle-de-bain">
+                        <div class="panel_group" id="buanderie">
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#salle-de-bain" href="#salle-de-bain" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#buanderie" href="#buanderie1" >
                                       <?php the_field("titre_buanderie_01");?>
                                     </a>
                                 </div>
-                                <div id="salle-de-bain1" class="panel-collapse collapse " >
+                                <div id="buanderie1" class="panel-collapse collapse " >
                                   <div class="panel-body">
                                     <?php the_field("description_buanderie_01");?>
                                   </div>
                                 </div>
                               </div>
+                              <?php $buanderie = get_field("titre_buanderie_02")?>
+                              <?php if ($buanderie) {?> 
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#salle-de-bain" href="#salle-de-bain2" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#buanderie" href="#buanderie2" >
                                      <?php the_field("titre_buanderie_02");?>
                                     </a>
                                 </div>
-                                <div id="salle-de-bain2" class="panel-collapse collapse">
+                                <div id="buanderie2" class="panel-collapse collapse">
                                   <div class="panel-body">
                                     <?php the_field("description_buanderie_02");?>
                                   </div>
                                 </div>
                               </div>
+                              <?php }?>
+                              <?php $buanderie2 = get_field("titre_buanderie_03")?>
+                              <?php if ($buanderie2) {?> 
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#salle-de-bain" href="#salle-de-bain3" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#buanderie" href="#buanderie3" >
                                      <?php the_field("titre_buanderie_03");?>
                                     </a>
                                 </div>
-                                <div id="salle-de-bain3" class="panel-collapse collapse in">
+                                <div id="buanderie3" class="panel-collapse collapse in">
                                   <div class="panel-body">
                                     <?php the_field("description_buanderie_03");?>
                                   </div>
                                 </div>
                               </div>
+                              <?php }?>
                             </div>
                     </div>
                 </div>
@@ -624,7 +628,7 @@
             <div class="container relative">
                 <div class="col-md-8">
                     <div class="images_single">
-                       <img class="imgGamme01" src="<?php the_field("image_suite");?>" />
+                       <img class="imgGamme01" src="<?php the_field("image_suite");?>" alt="<?php the_field("titre_suite_01");?>" />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -639,11 +643,11 @@
                         <div class="panel_group" id="chambre">
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#chambre" href="#chambre1" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#suite" href="#suite1" >
                                       <?php the_field("titre_suite_01");?>
                                     </a>
                                 </div>
-                                <div id="chambre1" class="panel-collapse collapse in" >
+                                <div id="suite1" class="panel-collapse collapse in" >
                                   <div class="panel-body">
                                     <?php the_field("description_suite_01");?>
                                   </div>
@@ -651,11 +655,11 @@
                               </div>
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#chambre" href="#chambre2" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#suite" href="#suite2" >
                                      <?php the_field("titre_suite_02");?>
                                     </a>
                                 </div>
-                                <div id="chambre2" class="panel-collapse collapse">
+                                <div id="suite2" class="panel-collapse collapse">
                                   <div class="panel-body">
                                     <?php the_field("description_suite_02");?>
                                   </div>
@@ -663,11 +667,11 @@
                               </div>
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#chambre" href="#chambre3" >
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#suite" href="#suite3" >
                                         <?php the_field("titre_suite_03");?>
                                     </a>
                                 </div>
-                                <div id="chambre3" class="panel-collapse collapse ">
+                                <div id="suite3" class="panel-collapse collapse ">
                                     <div class="panel-body">
                                         <?php the_field("description_03");?>
                                   </div>
@@ -686,23 +690,23 @@
                         <div class="titre">Clos couvert</div>
                         <div class="price"><?php the_field("clos_couvert");?> <strong>€</strong></div>
                         <hr />
-                        <a href="#">Détails</a>
+                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
                     </div>
                     <div class="item">
                         <span class="premium"></span>
                         <div class="titre">Premium</div>
                         <div class="price"><?php the_field("premium");?> <strong>€</strong></div>
                         <hr />
-                        <a href="#">Détails</a>
+                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
                     </div>
                     <div class="item">
                         <span class="prestige"></span>
                         <div class="titre">Prestige</div>
                         <div class="price"><?php the_field("prestige");?> <strong>€</strong></div>
                         <hr />
-                        <a href="#">Détails</a>
+                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
                     </div>
-                    <a href="#" class="btn btnType"><strong>Me faire</strong> financer</a>
+                    <a href="<?php echo esc_url( get_permalink(138) ); ?>" class="btn btnType"><strong>Me faire</strong> financer</a>
                 </div>
             </div>
         </section>

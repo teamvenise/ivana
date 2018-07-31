@@ -28,6 +28,11 @@ add_image_size('menuMega', 245, 150, true);
 
  require_once( get_template_directory() . '/inc/terrain.class.php' );
 
+/**Security options */
+ remove_action("wp_head", "wp_generator");
+ add_filter('login_errors',create_function('$a', "return null;"));
+ define('DISALLOW_FILE_EDIT',true);
+
 
 
 /*****************Nos temoignages*****************/

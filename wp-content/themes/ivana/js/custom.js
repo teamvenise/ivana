@@ -186,7 +186,8 @@ $(document).ready(function(){
 
         console.log(dateVal);
 
-        $("#inputDateParis").attr("value",dateVal);
+        //$("#inputDateParis").attr("value",dateVal);
+        $("#inputDateParis").val(dateVal);
 
         $('#rdvParis').modal('show');
 
@@ -278,7 +279,7 @@ $(document).ready(function(){
 
         });
 
-     $('#inputDateTana,#inputpays,#inputDateParis').attr('disabled', 'disabled');
+     $('#inputDateTana,#inputpays,#inputDateParis').attr('readonly', 'readonly');
 
      
 
@@ -489,8 +490,9 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows:true,
         dots: true,
-        autoPlay:true,
+        autoplay:false,
         fade: true,
+        speed: 1000
     });
 
     $('#terrain-single-slider').slick({
@@ -498,8 +500,9 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows:true,
         dots: true,
-        autoPlay:true,
+        autoplay:true,
         fade: true,
+        speed: 300
     });
 
     $('#similarSlide').slick({
@@ -507,7 +510,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows:true,
         dots: false,
-        autoPlay:true,
+        autoplay:true,
     });
 
     $("#id_plan").click(function(){

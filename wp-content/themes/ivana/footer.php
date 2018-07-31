@@ -2,7 +2,7 @@
     </main>
     <footer>
         <div class="container text-center">
-              Fait avec <i class="fa_heart"></i> par <a href="http://www.mediaclick.mg/" target="_blank">Mediaclick</a> | &copy; Ivana 2018, Tous Droits Réservés
+             &copy; Ivana 2018, Tous Droits Réservés | Fait avec <i class="fa_heart"></i> par <a href="http://www.mediaclick.mg/" target="_blank">Media Click</a> 
         </div>
     </footer>
     
