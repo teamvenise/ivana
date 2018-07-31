@@ -65,12 +65,13 @@ $terrains = CTerrain::getBy();
 <?php foreach ($terrains as $terrain):?>
     
         <div id="contentDiv" style="display:none">
-            <div id="<?php echo $terrain->id; ?>">
+            <div id="<?php echo $terrain->id; ?>" class="infoPop">
                 <span class="prix_du_m"><?php echo $terrain->prix_du_m; ?> €.</span>
                 <span class="surface">S: <?php echo $terrain->surface;?></span>                
             </div>
             <div id="img-out"></div>
         </div>
+       
 <?php endforeach; ?>
 
 <div class="col-md-4" id="map-canvas">
@@ -295,13 +296,15 @@ $terrains = CTerrain::getBy();
 					if(value.latitude && value.longitude){
 						contentString = render_infos_pdv(value);
                         contentpop = render_content_pdv(value);
-                        
+                      
+
                        
 						marker = new google.maps.Marker({
 							position: new google.maps.LatLng(value.latitude, value.longitude),
 							map: map,
                              icon: "<?php  echo get_template_directory_uri() ?>" + '/images/map_pin.png',
-                            id: value.id
+                            id: value.id,
+                           
                         });
 
                         	bindInfoWindow(marker, map, infowindow, contentString);
@@ -332,22 +335,28 @@ $terrains = CTerrain::getBy();
                                     popup.setMap(map);
                                   
                             }, 2000);      
+
+                          
                         }
 
-                        $(test).click(function(event){
-                            for (var i = 0; i < markers.length; i++) {
-                                var target = $(event.target);
-                                console.log(event.target)
-                                if (markers[i].id == "274") {
-                                    //Remove the marker from Map                  
-                                    //console.log(markers[i]);
-                                    bindInfoWindow(markers[i], map, infowindow, contentString);
-                                }
-                            }
-                           
-                        })
+                  
 					}
 				});
+                
+                $(".infoPop").click(function(event){
+                                for (var i = 0; i < markers.length; i++) {
+                                    var id = $(this).attr('id');
+                                    
+                                    if (markers[i].id == id) {     
+                                        var tag = SearchTerrain(coordonnees,id);                                       
+                                        var description  = render_infos_pdv(tag);
+                                        infowindow.setContent(description);
+                                        infowindow.open(map, markers[i]);
+                                    }
+                                }
+                           
+                            })
+                
 
 				//map.setCenter(new google.maps.LatLng(coordonnees[0].latitude, coordonnees[0].longitude));
 
@@ -357,9 +366,20 @@ $terrains = CTerrain::getBy();
 				alert('Geocode was not successful for the following reason: ' + status);
 			}
 		});
-        }
+        }      
 
-       
+         
+        function SearchTerrain(coord,id) {
+            var terrain ;
+            jQuery.each(coord, function(index, value) {     
+					if(value.id == id){                       
+                        terrain = value;
+                        return false; //break
+                    }
+                    })  
+
+                return terrain;
+            }
 
 
         function bindInfoWindow(marker, map, infowindow, description) {
@@ -379,6 +399,8 @@ $terrains = CTerrain::getBy();
       
     		geocodeAddress();
         }
+
+             
 
    
 /** Defines the Popup class. */
