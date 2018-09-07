@@ -74,7 +74,7 @@ $terrains = CTerrain::getBy();
        
 <?php endforeach; ?>
 
-<div class="col-md-4" id="map-canvas">
+<div class="col-md-6" id="map-canvas">
 </div>
 
 
@@ -230,20 +230,16 @@ $terrains = CTerrain::getBy();
           return _gallery;
         }
      
-        function render_infos_pdv(pdv){     
-             
-           	 var _html = '<a href="' + pdv.permalink +'" class="itemTerrain">';
-			 _html = '<div class="terrainSlider">';
-                        _html += gethtml_gallery(pdv);
-			_html += '</div>';
-			_html += '<div class="infosTerrain clearfix">';
-				_html += '<span class="nom">' + pdv.title +'</span>';
+        function render_infos_pdv(pdv){             
+            var _html = '<a href="' + pdv.permalink +'" class="itemTerrain">';
+			    _html = '<div class="terrainSlider">';
+                _html += gethtml_gallery(pdv);
+			    _html += '</div>';
+			    _html += '<div class="infosTerrain clearfix">';
+				_html += '<span>' + pdv.title +'</span>';
 				_html += '<span class="surface">' + pdv.surface +'</span>';
-			_html += '</div>';
-			_html += '<div class="description">';
-			_html += '<p> Terrain à vendre à '+ pdv.title +' à partir de ' + pdv.prix_du_m +' € le m2.</p>';
-			_html += '</div>';
-		_html += '</a>';
+                _html += '<span class="nom">' +pdv.prix_du_m +' €.</span>';
+		        _html += '</a>';
             	return _html;
         }
 
@@ -277,7 +273,7 @@ $terrains = CTerrain::getBy();
                 map.setMapTypeId('map_style');
 
 
-		var infowindow = new google.maps.InfoWindow();
+		var infowindow = new google.maps.InfoWindow({  zIndex: 15 });
 
 		var geocoder = new google.maps.Geocoder();
      
@@ -296,8 +292,6 @@ $terrains = CTerrain::getBy();
 					if(value.latitude && value.longitude){
 						contentString = render_infos_pdv(value);
                         contentpop = render_content_pdv(value);
-                      
-
                        
 						marker = new google.maps.Marker({
 							position: new google.maps.LatLng(value.latitude, value.longitude),
@@ -309,17 +303,6 @@ $terrains = CTerrain::getBy();
 
                         	bindInfoWindow(marker, map, infowindow, contentString);
 
-                       
-                    
-                        
-                        
-                        // setTimeout(function(){
-                        //     $(test).click(function(e){
-                        //         alert()
-                        //         infowindow.setContent(description);
-                        //     infowindow.open(map, this);
-                        // })
-                        // }, 2000);
 
                         //Add marker to the array.
                         markers.push(marker);
@@ -344,18 +327,18 @@ $terrains = CTerrain::getBy();
 				});
                 
                 $(".infoPop").click(function(event){
-                                for (var i = 0; i < markers.length; i++) {
-                                    var id = $(this).attr('id');
-                                    
-                                    if (markers[i].id == id) {     
-                                        var tag = SearchTerrain(coordonnees,id);                                       
-                                        var description  = render_infos_pdv(tag);
-                                        infowindow.setContent(description);
-                                        infowindow.open(map, markers[i]);
-                                    }
-                                }
-                           
-                            })
+                    for (var i = 0; i < markers.length; i++) {
+                        var id = $(this).attr('id');
+                        
+                        if (markers[i].id == id) {     
+                            var tag = SearchTerrain(coordonnees,id);                                       
+                            var description  = render_infos_pdv(tag);
+                            infowindow.setContent(description);
+                            infowindow.open(map, markers[i]);
+                        }
+                    }
+                
+                })
                 
 
 				//map.setCenter(new google.maps.LatLng(coordonnees[0].latitude, coordonnees[0].longitude));

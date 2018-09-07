@@ -17,34 +17,23 @@
                             $image3 = get_field('image_03');
                             $size = 'slider'; // (thumbnail, medium, large, full or custom size)
                             
-                            if( $image ) {
-                            
-                            	echo wp_get_attachment_image( $image, $size );
-                            
-                            }
-                            
+                            if( $image ) {                            
+                            	echo wp_get_attachment_image( $image, $size );                            
+                            }                            
                             ?>
                     </div>
                     <div class="item ">
                         <?php 
-                            if( $image2 ) {
-                            
-                            	echo wp_get_attachment_image( $image2, $size );
-                            
-                            }
-                            
+                            if( $image2 ) {                            
+                            	echo wp_get_attachment_image( $image2, $size );                            
+                            }                            
                             ?>
                     </div>
                     <div class="item ">
-                        <?php 
-                            
-                            
-                            if( $image3 ) {
-                            
-                            	echo wp_get_attachment_image( $image3, $size );
-                            
-                            }
-                            
+                        <?php
+                            if( $image3 ) {                            
+                            	echo wp_get_attachment_image( $image3, $size );                            
+                            }                            
                             ?>
                     </div>
                 </div>

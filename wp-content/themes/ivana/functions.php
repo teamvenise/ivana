@@ -191,7 +191,13 @@ function maisons() {
 
     register_post_type( 'maisons', $args );
 
-
+    /**delete cookies */
+    if (isset($_COOKIE['720plan'])) {
+        unset($_COOKIE['720plan']);
+    }
+    if (isset($_COOKIE['720planBAK'])) {
+        unset($_COOKIE['720planBAK']);
+    }
 
 }
 

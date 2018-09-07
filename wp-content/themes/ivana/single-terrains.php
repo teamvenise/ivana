@@ -2,7 +2,7 @@
 /*Template name: Terrains detail*/
 get_header();
 $pageid = get_the_id();
-$terrains = CTerrain::getBy();
+$terrains = CTerrain::getBy(4);
 $gallery = CTerrain::getTerrainGallery($pageid);
 
 $current_terrain = CTerrain::getById($pageid);
@@ -29,11 +29,14 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
 
 
 <div id="terrain-single-slider">
-     <?php  if( count($gallery) ): ?>
-        <?php  foreach($gallery as $image): ?>
-            <?php   $full_image_url= $image['full_image_url'];
+     <?php  if( count($gallery) ) : ?>
+        <?php  $i = 0; foreach($gallery as $image): ?>
+        <?php  if( $i < 3 ) : ?>
+            <?php  $i += 1;
+                    $full_image_url= $image['full_image_url'];$full_image_url = acf_photo_gallery_resize_image($full_image_url, 1920, 540);
                     $title = $image['title'];  ?>
                 <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+                <?php endif; ?>
         <?php endforeach; ?>
      <?php endif; ?>
   
@@ -69,11 +72,7 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                     <tr>
                         <td><strong>Distance</strong></td>
                         <td><?php the_field("distance");?></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Durée</strong></td>
-                        <td><?php the_field("duree");?></td>
-                    </tr>
+                    </tr>                   
                     <tr>
                         <td><strong>Jirama</strong></td>
                         <td><?php the_field("jirama");?></td>
@@ -121,7 +120,7 @@ $price_m = trim($current_terrain->prix_du_m) * $today_currency;
                             <a class="item" href="<?php echo get_permalink($terrain->id); ?>" >
                                  <?php  if( count($gallery) ): ?>
                                     <?php   $image = $gallery[0] ?>
-                                        <?php   $full_image_url= $image['full_image_url'];
+                                        <?php   $full_image_url= $image['full_image_url'];$full_image_url = acf_photo_gallery_resize_image($full_image_url, 308, 218);
                                                 $title = $image['title'];  ?>
                                             <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
                                    

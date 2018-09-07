@@ -26,7 +26,14 @@
     .tab_description { right: 0; left: 0; margin: 0 auto; }
     .carousel_page .carousel-inner > .item { height: 500px; }
     .carousel_page .carousel-inner > .item img { height: 100%; width: auto; }    
-    .BloctarifsMaison .btn { display: block; max-width: 240px; text-align: center; margin: 40px auto 0; padding: 15px 0; }
+    .BloctarifsMaison .btn {
+        display: block;
+        max-width: 240px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 15px;
+        font-size: 18px;
+    }
     .blocrdvSingle  .container { width: 100%; }
     .contentRdv { position: relative; }
     .contentRdv .back,
@@ -46,7 +53,7 @@
     .carousel_temoignage .item .name { font-size: 16px; }    
     .bloc_history_home { padding: 70px 0; background-color: #e0e0e0; background-blend-mode: soft-light; background-size: 180%; background-position: left top; }
     .relative.list_maisonHome { padding-top: 30px; }
-    .list_maisonHome .sousTitre { padding: 15px 0; }
+
     .bloc_financement .content { height: auto; }
     .bloc_financement .content:not(.bloc_reservation) { height: auto; padding-bottom: 50px; }
     .contentRdv  .datepicker { max-width: 200px; margin: 0 auto; }
@@ -69,8 +76,21 @@
     .blocrdvSingle .bloc_reservation { padding: 25px; }
     .contTemoignage { min-height: inherit; }
     #map-canvas { display: none; }
-    /********/
+
+    /********/    
+    #terrain-single-slider { height: 260px; }
+    #terrain-single-slider .slick-slide img { height: 260px; object-fit: cover; }
+    #terrain-single-slider .slick-arrow { width: 24px; height: 24px; margin-top: -12px; }
+    #terrain-single-slider .slick-prev { left: 25px; }
+    #terrain-single-slider .slick-next { right: 25px; }
     .itemTerrain .terrainSlider { max-height: inherit; }
+    .mapHome .map-paris,
+    .mapHome .map-tana { display: none;}
+    .mapHome .adresse { padding: 40px 25px; }
+    .contact_map { position: relative; top: 30px; }
+    .list_maisonHome ul.details {margin:0; }
+    .list_maisonHome ul.details li { font-size: 12px; margin: 0 5px; text-align: left; }
+    .list_maisonHome .sousTitre { display: block; margin-bottom: 0; padding: 5px 0;margin-top: 15px; }
 }
 @media screen and (min-width:768px ) and (max-width:991px ){
     .btn.btnType{white-space: normal; }
@@ -151,8 +171,9 @@
     .carousel_page .carousel-inner > .item img{max-width: 100%; height: auto; }
     .carousel_page .carousel-inner > .item{height: auto; }
     .bloc_newsletter .newsForm{padding: 0; }
-    .page_inscription h1{font-size: 30px; }
-    .page_inscription{background-position: center; }
+    .page_inscription h1{font-size: 30px;}
+    .page_inscription{background-position: center; padding: 40px 0;     min-height: inherit;}
+    .page_inscription .form-control { }
 
     .absolute.tab_description{position: static;margin-top: 7px; width: 100%; }
     .tab_description .panel-heading{text-align: center; }
@@ -167,9 +188,7 @@
 
     #fullWidth-page .head-page > img:last-of-type { margin-top: 15px; }
 
-    .list_maisonHome img { max-width: 320px; margin: 0 auto; display: block; }
-
-    #terrain-single-slider { display: none; }
+    .list_maisonHome img { max-width: 500px; margin: 0 auto; display: block; }
 
     #page-interne { padding: 30px 0 40px; }
 }
@@ -192,13 +211,34 @@
     .blocTxt > div.photo img { width: 100%; vertical-align: middle; display: table-cell; height: 100%; }
     main section h2 { font-size: 18px; }
     .list_maisonHome .maisonName { color: #c93a1c; font: 50px/20px anydoreregular; }
+    .list_maisonHome img { max-width: 100%; }
     #page-interne { padding: 25px 0 40px; }
     /******/
     .tab_description .action .prix,
     .tab_description .action .pull-right{ float: none !important; }
     .mapHome .absolute { position: static; }
-    .contact_map { width: 300px; padding: 20px 5px; box-shadow: none; margin: 0 auto; }
+    .mapHome .row { display: block}
+    .contact_map { width: 100%; padding: 10px 15px 0; box-shadow: none; margin: 0 auto; position: static;}
+    .socialMap { margin: 0; }
 }
-@media screen and (max-width:374px )
-{ .list_maisonHome img { max-width: 100%; }
+@media screen and (max-width:374px ){
+    .list_maisonHome ul.details {
+        margin: 0 auto;
+        text-align: left;
+    }
+    .list_maisonHome ul.details li {
+        font-size: 15px;
+        text-align: left;
+        margin: 5px 0;
+        width: 49%;
+    }
+    .list_maisonHome .details .icone {
+        margin-right: 5px;
+    }
+    .list_maisonHome img {
+        max-width: 100%;
+        min-height: 490px;
+        object-fit: cover;
+        object-position: center;
+    }
 }

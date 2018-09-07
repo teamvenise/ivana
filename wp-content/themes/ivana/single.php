@@ -169,16 +169,7 @@
                                 
 
                                 <div class="action">
-
-                                    <div class="pull-left prix">
-
-                                        <label>Exorna </label>
-
-                                        <span class="prixTotal"><?php the_field("prix");?> €</span>
-
-                                    </div>
-                                    <div class="pull-right">
-
+                                    <div class="pull-left">
                                         <a class="btn btnType" href="<?php echo  get_permalink(get_page_by_path("inscription")->ID); ?>">Demander les plans</a>
     
                                     </div>
@@ -685,27 +676,6 @@
         <section class="BloctarifsMaison">
             <div class="container">
                 <div class="text-center">
-                    <div class="item">
-                        <span class="clos"></span>
-                        <div class="titre">Clos couvert</div>
-                        <div class="price"><?php the_field("clos_couvert");?> <strong>€</strong></div>
-                        <hr />
-                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
-                    </div>
-                    <div class="item">
-                        <span class="premium"></span>
-                        <div class="titre">Premium</div>
-                        <div class="price"><?php the_field("premium");?> <strong>€</strong></div>
-                        <hr />
-                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
-                    </div>
-                    <div class="item">
-                        <span class="prestige"></span>
-                        <div class="titre">Prestige</div>
-                        <div class="price"><?php the_field("prestige");?> <strong>€</strong></div>
-                        <hr />
-                        <a href="<?php echo esc_url( get_permalink(138) ); ?>">Détails</a>
-                    </div>
                     <a href="<?php echo esc_url( get_permalink(138) ); ?>" class="btn btnType"><strong>Me faire</strong> financer</a>
                 </div>
             </div>

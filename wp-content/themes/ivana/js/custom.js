@@ -134,13 +134,27 @@ $(document).ready(function(){
 
         var dateVal = $("#datetimepickerTana").val();
 
-        console.log(dateVal);
+       
 
         $("#inputDateTana").attr("value",dateVal);
 
         $('#rdvTana').modal('show');
 
     
+        
+     $select = jQuery("#start_hour");
+
+     for (let hr = 8; hr <= 20; hr++) {
+
+     let hrStr = hr.toString().padStart(2, "0") + ":";
+
+     let val = hrStr + "00";
+     $select.append('<option val="' + val + '">' + val + '</option>');
+
+     val = hrStr + "15";
+     $select.append('<option val="' + val + '">' + val + '</option>')
+
+     }
 
     
 
@@ -192,14 +206,27 @@ $(document).ready(function(){
         $('#rdvParis').modal('show');
 
     
-
+        
+     
     
 
         $('#rdvParis').on('shown.bs.modal', function () {
 
              $("#inputDateParis").attr("value",dateVal); 
+           
+             $select = $("#start_hour_pr");
 
-             
+             for (let hr = 8; hr <= 20; hr++) {
+        
+             let hrStr = hr.toString().padStart(2, "0") + ":";
+        
+             let val = hrStr + "00";
+             $select.append('<option val="' + val + '">' + val + '</option>');
+        
+             val = hrStr + "15";
+             $select.append('<option val="' + val + '">' + val + '</option>')
+        
+             }
 
         });
 
@@ -290,8 +317,6 @@ $(document).ready(function(){
             $(this).toggleClass("open");
 
         });
-
-        
 
      /*$valSejourFinal= 0;
 

@@ -1,4 +1,4 @@
-<?php get_header();
+﻿<?php get_header();
 
 /*Template name: Acceuil*/?>
 
@@ -466,12 +466,23 @@ construction de votre maison, c’est un pas de plus vers un renouveau de l’Il
                                     </div>
                                     
                                     <ul class="details">
-                                        <li><i class="icone chambres"></i>3 Chambres</li>
-                                        <li><i class="icone salle-de-bain"></i>2 salles de bains</li>
-                                        <li><i class="icone surface"></i>60 M²</li>
-                                    </ul>
+                                    <?php $chambre = get_field("nombre_de_chambre");
+                                        if(  $chambre != null && $chambre >1 ) : ?>
+                                            <li><i class="icone chambres"></i><?php echo $chambre." Chambres" ?></li>
+                                        <?php else : ?>
+                                            <li><i class="icone chambres"></i> 1 Chambre</li> 
+                                        <?php endif ?>
 
-                                    <!--div class="short_desc"><?php the_field("type");?> - <?php the_field("surface");?> m²</div-->
+                                        <?php $salle_de_bain = get_field("nombre_de_salle_de_bain");
+                                        if(  $salle_de_bain != null && $salle_de_bain >1 ) : ?>
+                                            <li><i class="icone salle-de-bain"></i><?php echo $salle_de_bain." salles de bains" ?></li>
+                                        <?php else : ?>
+                                            <li><i class="icone salle-de-bain"></i> 1 salle de bain</li> 
+                                        <?php endif ?>
+                                        
+                                        <li><i class="icone surface"></i> <?php the_field("surface");?> M²</li>
+                                    </ul>
+                                    <!--div class="short_desc"><?php //the_field("type");?> - <?php //the_field("surface");?> m²</div-->
 
                                 </div>
 
@@ -543,45 +554,6 @@ construction de votre maison, c’est un pas de plus vers un renouveau de l’Il
                 <a class="btn btnType" title="ici" href="<?php echo esc_url( get_permalink(224) ); ?>">ICI</a>
             </div>
         </section>
-        <section class="bloc_instagramHome">
-
-          <?php 
-
-        			$args=array('page_id' =>96, 'posts_per_page' =>-1);
-
-        			$loop=new WP_Query($args);
-
-        			while ( $loop->have_posts() ) : $loop->the_post();
-
-        			?>
-
-            <div class="container">
-
-                <div class="title text-center">
-
-                    <h2><span><?php the_title(); ?></span></h2>
-
-                    <span></span>
-
-                </div>
-
-                <div>
-
-                    <?php the_content(); ?>
-
-                </div>
-
-            </div>
-
-            <?php
-
-			endwhile;
-
-			wp_reset_query();
-
-			?> 
-
-        </section>
 
          <?php
 
@@ -591,7 +563,8 @@ construction de votre maison, c’est un pas de plus vers un renouveau de l’Il
 
 		?>
 
-            <section class="mapHome relative">
+        <section class="mapHome relative">
+
             <div class="contact_map">
                 <ul class="socialMap">
                     <li><a href="mailto:salama@ivana.mg">salama@ivana.mg</a></li>
@@ -606,7 +579,7 @@ construction de votre maison, c’est un pas de plus vers un renouveau de l’Il
                     <div class="col-md-3 adresse">
                         <span class="icone tana"></span>
                         <strong>ANTANANARIVO</strong>
-                        <p>Antananarivo 102, <br>Sabotsy Namehana</p>
+                        <p>PR II J 117 K Ambodivoanjo, <br>Antananarivo 101</p>
                         <hr />
                     </div>
                     <div class="col-md-3 map-tana">
@@ -618,11 +591,12 @@ construction de votre maison, c’est un pas de plus vers un renouveau de l’Il
                     <div class="col-md-3 adresse">
                         <span class="icone paris"></span>
                         <strong>PARIS</strong>
-                        <p>7 Rue Meyerbeer 75009, <br>Paris</p>
+                        <p>7 Rue Meyerbeer 75009, (chez Spaces)<br>Paris</p>
                         <hr />
                     </div>
                 </div>
             </div>
+
         </section>
 
 <?php get_footer();?>
