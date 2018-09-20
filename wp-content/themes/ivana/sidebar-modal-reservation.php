@@ -6,7 +6,7 @@
 
                                             <div class="table countryChoice" id="checkParis">
 
-                                                <div class="cont">
+                                                <div class="cont reservation-mod">
 
                                                     <span>Se voir  à Paris</span> 
 
@@ -20,9 +20,9 @@
 
                                             <div class="table countryChoice" id="checkTana">
 
-                                                <div class="cont">
+                                                <div class="cont reservation-mod">
 
-                                                    <span>Se voir  à Tana</span>
+                                                    <span >Se voir  à Tana</span>
 
                                                 </div>
 

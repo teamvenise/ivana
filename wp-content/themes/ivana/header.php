@@ -3,7 +3,6 @@
 <html>
 
     <head>
-
         <title><?php wp_title( '|', true, 'right' ); ?>IVANA</title>
 
         <meta http-equiv="content-type" content="text/html" />
@@ -14,19 +13,19 @@
 
         <link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/images/favicon.ico"/>
 
-    <link href="<?php bloginfo( 'template_url' ); ?>/style.css" rel="stylesheet"/>
-    
-    <link href="<?php bloginfo( 'template_url' ); ?>/css/pageStyle.css" rel="stylesheet"/>
+        <link href="<?php bloginfo( 'template_url' ); ?>/style.css" rel="stylesheet"/>
+        
+        <link href="<?php bloginfo( 'template_url' ); ?>/css/pageStyle.css" rel="stylesheet"/>
 
-    <link href="<?php bloginfo( 'template_url' ); ?>/css/mobile.css" rel="stylesheet"/>
+        <link href="<?php bloginfo( 'template_url' ); ?>/css/mobile.css" rel="stylesheet"/>
 
-    <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap.css" rel="stylesheet"/>
+        <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/bootstrap.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/star-rating.css" rel="stylesheet"/>
 
-    <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/slick.css" rel="stylesheet"/>
+        <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/slick.css" rel="stylesheet"/>
 
         <link href="<?php bloginfo( 'template_url' ); ?>/css/lib/slick.css" rel="stylesheet"/>
        
@@ -61,6 +60,34 @@
         
           gtag('config', 'UA-120665604-1');
         </script>
+           
+        <!-- Global site tag (gtag.js) - Google Ads: 789567691 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-789567691"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-789567691');
+        </script>
+
+     <script>
+     $( document ).ready(function() {
+        function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-789567691/tYGICNLA7ogBEMuxv_gC',
+                'event_callback': callback
+            });
+        return false;
+        }
+    });
+    </script>
+  
 
     </head>
 
