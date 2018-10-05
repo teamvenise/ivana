@@ -11,13 +11,7 @@
     logged_in_greeting="Bonjour! En quoi pouvons-nous vous aider ?"
     logged_out_greeting="Bonjour! En quoi pouvons-nous vous aider ?">
     </div>
-    <script>
-    
-        jQuery("#checkParis").click(function() {gtag_report_conversion()});
-        jQuery("#checkTana").click(function() {gtag_report_conversion()});
-    
-    
-    </script>
+   
    
     <?php  
 

@@ -1,10 +1,12 @@
 <?php 
 /*
 Template name: inscription*/
-get_header();?>
+get_header();
+
+?>
      
     <?php while(have_posts()) : the_post(); ?>
-    <main class="main_home page_inscription">
+    <main class="main_home page_inscription" id="page_insript_plan">
 
         <div class="container">
             <div class="row">
@@ -12,7 +14,7 @@ get_header();?>
                 <div class="col-sm-7">
                   
 
-                    <?php the_content();?>
+                    <?php echo  the_content();?>
 
                 </div>
             </div>

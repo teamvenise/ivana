@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+         
+
+
         $('.btnBanner a').click(function(){
 
         		var theid = $(this).attr('href');
@@ -240,15 +243,6 @@ $(document).ready(function(){
 
     });
 
-    
-
-    
-
-   
-
-      
-
-    
 
       $(".curr_date").html( moment().format('D') );
 
@@ -306,7 +300,7 @@ $(document).ready(function(){
 
         });
 
-     $('#inputDateTana,#inputpays,#inputDateParis').attr('readonly', 'readonly');
+     $('#inputDateTana,#inputpays,#inputDateParis,#inputMaison').attr('readonly', 'readonly');
 
      
 
@@ -317,198 +311,6 @@ $(document).ready(function(){
             $(this).toggleClass("open");
 
         });
-
-     /*$valSejourFinal= 0;
-
-     $valCuisineFinal = 0;
-
-     $valDoucheFinal = 0;
-
-     $valChambreFinal = 0 ;
-
-     $("#id_gammeSejour").click(function(){
-
-        
-
-         if($(this).hasClass("gamme1")){
-
-            $val = $("#gammeSejour02").val();
-
-            $(this).removeClass("gamme1");
-
-            $(this).addClass("gamme2");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme2");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme1");
-
-         }else if($(this).hasClass("gamme2")){
-
-            $val = $("#gammeSejour03").val();
-
-            $(this).removeClass("gamme2");
-
-            $(this).addClass("gamme3");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme3");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme2");
-
-         }else if($(this).hasClass("gamme3")){
-
-            $val = $("#gammeSejour01").val();
-
-            $(this).removeClass("gamme3");
-
-            $(this).addClass("gamme1");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme1");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme3");
-
-         }
-
-          $valSejourFinal = parseFloat($val);
-
-          $valSFinal =5000+ $valSejourFinal+ $valCuisineFinal +$valDoucheFinal + $valChambreFinal;
-
-        console.log($valSFinal);
-
-         $( ".prixTotal" ).html( $valSFinal + " €");
-
-     });*/
-
-     
-
-     $/*("#id_gammeCuisine").click(function(){
-
-         if($(this).hasClass("gamme1")){
-
-            $val1 = $("#gammeCuisine02").val();
-
-            $(this).removeClass("gamme1");
-
-            $(this).addClass("gamme2");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme2");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme1");
-
-         }else if($(this).hasClass("gamme2")){
-
-            $val1 = $("#gammeCuisine03").val();
-
-            $(this).removeClass("gamme2");
-
-            $(this).addClass("gamme3");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme3");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme2");
-
-         }else if($(this).hasClass("gamme3")){
-
-            $val1 = $("#gammeCuisine01").val();
-
-            $(this).removeClass("gamme3");
-
-            $(this).addClass("gamme1");
-
-            $(this).closest(".bloc_details ").addClass("blocGamme1");
-
-            $(this).closest(".bloc_details ").removeClass("blocGamme3");
-
-         }
-
-          $valCuisineFinal = parseFloat($val1);
-
-          $valSFinal = 5000+ $valSejourFinal+ $valCuisineFinal +$valDoucheFinal + $valChambreFinal;
-
-          console.log($valSFinal);
-
-         $( ".prixTotal" ).html( $valSFinal + " €");
-
-     });
-
-     
-
-     $("#id_gammeDouche").click(function(){
-
-         if($(this).hasClass("gamme1")){
-
-            $val2 = $("#gammeDouche02").val();
-
-            $(this).removeClass("gamme1");
-
-            $(this).addClass("gamme2");
-
-         }else if($(this).hasClass("gamme2")){
-
-            $val2 = $("#gammeDouche03").val();
-
-            $(this).removeClass("gamme2");
-
-            $(this).addClass("gamme3");
-
-         }else if($(this).hasClass("gamme3")){
-
-            $val2 = $("#gammeDouche01").val();
-
-            $(this).removeClass("gamme3");
-
-            $(this).addClass("gamme1");
-
-         }
-
-          $valDoucheFinal = parseFloat($val2);
-
-          $valSFinal = 5000+ $valSejourFinal+ $valCuisineFinal +$valDoucheFinal + $valChambreFinal;
-
-          console.log($valSFinal);
-
-         $( ".prixTotal" ).html( $valSFinal + " €");
-
-     });*/
-
-     
-
-     /*$("#id_gammeChambre").click(function(){
-
-         if($(this).hasClass("gamme1")){
-
-            $val3 = $("#gammeChambre02").val();
-
-            $(this).removeClass("gamme1");
-
-            $(this).addClass("gamme2");
-
-         }else if($(this).hasClass("gamme2")){
-
-            $val3 = $("#gammeChambre03").val();
-
-            $(this).removeClass("gamme2");
-
-            $(this).addClass("gamme3");
-
-         }else if($(this).hasClass("gamme3")){
-
-            $val3 = $("#gammeChambre01").val();
-
-            $(this).removeClass("gamme3");
-
-            $(this).addClass("gamme1");
-
-         }
-
-          $valChambreFinal = parseFloat($val3);
-
-          $valSFinal = 5000+ $valSejourFinal+ $valCuisineFinal +$valDoucheFinal + $valChambreFinal;
-
-          console.log($valSFinal);
-
-         $( ".prixTotal" ).html( $valSFinal + " €");
-
-     });*/
 
     $('.terrainSlider').slick({
         slidesToShow: 1,
@@ -548,6 +350,30 @@ $(document).ready(function(){
 
      });
 
+     $('#btn_inscipt_maison').click(function(e){
+        // e.preventDefault();
+        setCookie('maison',null,1);
+        eraseCookie('maison');
+        var plan = $(this).attr("data-value");        
+        setCookie('maison',plan,1);   
+    });
+
+    if($("#inputMaison").length != 0) {
+        var maison = getCookie('maison');
+        
+        $("#span_maison").text(maison);
+        $("#inputMaison").attr("value",maison);
+       
+    }
+
+    if($("#page_insript_reservation").length != 0) {
+    
+       // gtag_report_conversion("https://www.ivana.mg");
+
+    }
+
+
+
      $(window).scroll(function(event) {    
         event.preventDefault();
         var scroll = $(window).scrollTop();
@@ -555,4 +381,30 @@ $(document).ready(function(){
             $("#map-canvas").addClass('fixedMap');
         }
     });
+
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    
+        function eraseCookie(name) {   
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+        
 });

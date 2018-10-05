@@ -61,32 +61,17 @@
           gtag('config', 'UA-120665604-1');
         </script>
            
-        <!-- Global site tag (gtag.js) - Google Ads: 789567691 -->
+      <!-- Global site tag (gtag.js) - Google Ads: 789567691 -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-789567691"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-            gtag('config', 'AW-789567691');
+        gtag('config', 'AW-789567691');
         </script>
 
-     <script>
-     $( document ).ready(function() {
-        function gtag_report_conversion(url) {
-        var callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
-            }
-        };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-789567691/tYGICNLA7ogBEMuxv_gC',
-                'event_callback': callback
-            });
-        return false;
-        }
-    });
-    </script>
+
   
 
     </head>
@@ -97,13 +82,13 @@
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        // (function(d, s, id) {
+        // var js, fjs = d.getElementsByTagName(s)[0];
+        // if (d.getElementById(id)) return;
+        // js = d.createElement(s); js.id = id;
+        // js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+        // fjs.parentNode.insertBefore(js, fjs);
+        // }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <input type="hidden" id="valuPlan" />
